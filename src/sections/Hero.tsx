@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router';
 import gsap from 'gsap';
 import { MapPin, ArrowRight, Play } from 'lucide-react';
 import SectionBadge from '@/components/SectionBadge';
@@ -58,10 +59,10 @@ export default function Hero() {
         </p>
 
         <div className="hero-buttons mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#hours-pricing" className="btn-primary group">
+          <Link to="/inquiry" className="btn-primary group">
             Reserve a Court
             <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          </Link>
           <a href="#facility" className="btn-ghost group">
             <Play size={16} className="transition-transform duration-300 group-hover:scale-110" />
             Explore Facility

@@ -1,23 +1,16 @@
 import ScrollReveal from '@/components/ScrollReveal';
+import { Link } from 'react-router';
 import { MapPin, Phone, ArrowRight } from 'lucide-react';
 
 const quickLinks = [
-  { label: 'Our Facility', href: '#facility' },
-  { label: 'Courts', href: '#courts' },
-  { label: 'Hours & Pricing', href: '#hours-pricing' },
-  { label: 'Reserve a Court', href: '#hours-pricing' },
-  { label: 'Contact', href: '#visit-us' },
+  { label: 'Our Facility', to: '/#facility' },
+  { label: 'Courts', to: '/#courts' },
+  { label: 'Hours & Pricing', to: '/#hours-pricing' },
+  { label: 'Reserve a Court', to: '/inquiry' },
+  { label: 'Contact', to: '/#visit-us' },
 ];
 
 export default function Footer() {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="bg-secondary-darker text-primary pt-16 pb-8">
       <div className="max-w-[1200px] mx-auto px-6">
@@ -25,11 +18,13 @@ export default function Footer() {
           {/* Logo & Description */}
           <ScrollReveal>
             <div className="mb-4">
-              <img
-                src="/images/logo.png"
-                alt="Island Pickleball Hub — est. 2026"
-                className="h-14 sm:h-16 w-auto max-w-full object-contain object-left rounded-md"
-              />
+              <Link to="/">
+                <img
+                  src="/images/logo.png"
+                  alt="Island Pickleball Hub — est. 2026"
+                  className="h-14 sm:h-16 w-auto max-w-full object-contain object-left rounded-md"
+                />
+              </Link>
             </div>
             <p className="text-primary/70 text-sm leading-relaxed max-w-xs">
               Your home court in paradise. Premium pickleball facilities on Samal Island, open 6 days a week.
@@ -55,14 +50,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleClick(e, link.href)}
+                  <Link
+                    to={link.to}
                     className="text-sm text-primary/70 hover:text-primary flex items-center gap-1.5 transition-colors group"
                   >
                     <ArrowRight size={12} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

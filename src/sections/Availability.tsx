@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionBadge from '@/components/SectionBadge';
 import { Calendar, ArrowRight } from 'lucide-react';
@@ -169,10 +170,10 @@ export default function Availability() {
                         Full
                       </button>
                     ) : (
-                      <button className="btn-primary text-sm py-2 px-4">
+                      <Link to="/inquiry" className="btn-primary text-sm py-2 px-4 group">
                         Reserve
                         <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
-                      </button>
+                      </Link>
                     )}
                   </div>
                 </div>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import ScrollReveal from '@/components/ScrollReveal';
 import { ArrowRight, Phone } from 'lucide-react';
 
@@ -21,10 +22,10 @@ export default function CTABanner() {
             Submit an inquiry and our team will get back to you within 24 hours to confirm your court reservation.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#visit-us" className="btn-primary group">
+            <Link to="/inquiry" className="btn-primary group">
               <ArrowRight size={16} />
               Submit an Inquiry
-            </a>
+            </Link>
             <a href="tel:09382998903" className="btn-ghost group">
               <Phone size={16} />
               Contact Us
