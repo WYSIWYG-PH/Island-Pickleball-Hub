@@ -1,6 +1,6 @@
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionBadge from '@/components/SectionBadge';
-import { MapPin, ArrowRight, Phone, Mail } from 'lucide-react';
+import { MapPin, ArrowRight, Phone } from 'lucide-react';
 
 export default function VisitUs() {
   return (

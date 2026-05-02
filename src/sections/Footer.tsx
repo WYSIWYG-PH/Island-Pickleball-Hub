@@ -1,5 +1,5 @@
 import ScrollReveal from '@/components/ScrollReveal';
-import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, ArrowRight } from 'lucide-react';
 
 const quickLinks = [
   { label: 'Our Facility', href: '#facility' },
